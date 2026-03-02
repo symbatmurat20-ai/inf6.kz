@@ -1,0 +1,434 @@
+<!DOCTYPE html>
+<html lang="kk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="https://public-frontend-cos.metadl.com/mgx/img/favicon_atoms.ico" type="image/x-icon">
+    <title>INF6.KZ — 6-сынып Информатика онлайн кітапша</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <link rel="stylesheet" crossorigin href="/assets/index-DTWOSOdw.css">
+</head>
+<body>
+
+<!-- NAVBAR -->
+<nav class="navbar" id="navbar">
+    <div class="nav-container">
+        <a href="#home" class="nav-logo">
+            <span class="logo-icon">📚</span> INF6.KZ
+        </a>
+        <button class="nav-toggle" id="navToggle" aria-label="Toggle menu">
+            <span></span><span></span><span></span>
+        </button>
+        <ul class="nav-menu" id="navMenu">
+            <li><a href="#home" class="nav-link active">Басты бет</a></li>
+            <li><a href="#lessons" class="nav-link">Сабақтар</a></li>
+            <li><a href="#videos" class="nav-link">Бейнесабақ</a></li>
+            <li><a href="#tests" class="nav-link">Тест</a></li>
+            <li><a href="#levels" class="nav-link">Деңгейлік тапсырма</a></li>
+            <li><a href="#notebook" class="nav-link">Дәптермен жұмыс</a></li>
+            <li><a href="#kmj" class="nav-link">ҚМЖ</a></li>
+            <li><a href="#contact" class="nav-link">Байланыс</a></li>
+        </ul>
+    </div>
+</nav>
+
+<!-- HERO / HOME -->
+<section class="hero" id="home">
+    <div class="hero-overlay"></div>
+    <div class="hero-content">
+        <h1 class="hero-title animate-fade-up">INF6.KZ онлайн кітапша</h1>
+        <p class="hero-subtitle animate-fade-up delay-1">6-сынып информатика пәніне арналған интерактивті білім беру платформасы</p>
+        <a href="#lessons" class="btn btn-primary animate-fade-up delay-2">Сабақтарды бастау <i class="fas fa-arrow-right"></i></a>
+    </div>
+    <div class="hero-bg-img">
+        <img src="https://mgx-backend-cdn.metadl.com/generate/images/997213/2026-03-01/3b2f3fd5-dcbd-4aec-b6cd-f72ada485e8f.png" alt="Hero Banner">
+    </div>
+</section>
+
+<!-- TOPICS OVERVIEW ON HOME -->
+<section class="section topics-overview" id="topics-overview">
+    <div class="container">
+        <h2 class="section-title">Тақырыптар</h2>
+        <p class="section-desc">3 негізгі тақырып бойынша толық білім алыңыз</p>
+        <div class="cards-grid">
+            <div class="topic-card" onclick="openLessonDetail(0)">
+                <div class="topic-card-img">
+                    <img src="https://mgx-backend-cdn.metadl.com/generate/images/997213/2026-03-01/931589bf-51ce-4930-ab2b-16c227b85b10.png" alt="Алгоритмдер">
+                </div>
+                <div class="topic-card-body">
+                    <span class="topic-badge">Тақырып 1</span>
+                    <h3>Алгоритмдер және блок-схемалар</h3>
+                    <p>Алгоритмдердің түрлері, блок-схемалар құру, тізбекті, тармақталу және циклдік алгоритмдер.</p>
+                    <span class="card-link">Толығырақ <i class="fas fa-arrow-right"></i></span>
+                </div>
+            </div>
+            <div class="topic-card" onclick="openLessonDetail(1)">
+                <div class="topic-card-img">
+                    <img src="https://mgx-backend-cdn.metadl.com/generate/images/997213/2026-03-01/707cc8e8-e13f-4c40-84d4-91d8d25dce15.png" alt="Scratch">
+                </div>
+                <div class="topic-card-body">
+                    <span class="topic-badge">Тақырып 2</span>
+                    <h3>Scratch бағдарламалау негіздері</h3>
+                    <p>Scratch ортасында бағдарлама жасау, спрайттар, циклдер, шарттар және оқиғалар.</p>
+                    <span class="card-link">Толығырақ <i class="fas fa-arrow-right"></i></span>
+                </div>
+            </div>
+            <div class="topic-card" onclick="openLessonDetail(2)">
+                <div class="topic-card-img">
+                    <img src="https://mgx-backend-cdn.metadl.com/generate/images/997213/2026-03-01/f3c02346-51cd-45dd-9a8e-3df2d214101c.png" alt="Желілер">
+                </div>
+                <div class="topic-card-body">
+                    <span class="topic-badge">Тақырып 3</span>
+                    <h3>Компьютерлік желілер</h3>
+                    <p>Интернет, желі түрлері, IP-адрес, браузерлер, қауіпсіздік және деректерді қорғау.</p>
+                    <span class="card-link">Толығырақ <i class="fas fa-arrow-right"></i></span>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- LESSON DETAIL MODAL -->
+<div class="modal-overlay" id="lessonModal">
+    <div class="modal-content lesson-modal-content">
+        <button class="modal-close" onclick="closeLessonModal()">&times;</button>
+        <div id="lessonDetailContent"></div>
+    </div>
+</div>
+
+<!-- САБАҚТАР SECTION -->
+<section class="section" id="lessons">
+    <div class="container">
+        <h2 class="section-title">📖 Сабақтар</h2>
+        <p class="section-desc">Тақырыпты таңдап, толық сабақты оқыңыз. Жасанды интеллект сізге сабақты оқып береді!</p>
+        <div class="cards-grid">
+            <div class="lesson-card" onclick="openFullLesson(0)">
+                <div class="lesson-card-icon"><i class="fas fa-project-diagram"></i></div>
+                <h3>Алгоритмдер және блок-схемалар</h3>
+                <p>Алгоритмдердің анықтамасы, қасиеттері, түрлері және блок-схемалар.</p>
+                <span class="card-link">Сабақты ашу <i class="fas fa-book-open"></i></span>
+            </div>
+            <div class="lesson-card" onclick="openFullLesson(1)">
+                <div class="lesson-card-icon"><i class="fas fa-puzzle-piece"></i></div>
+                <h3>Scratch бағдарламалау негіздері</h3>
+                <p>Scratch ортасы, блоктар, спрайттар және алғашқы бағдарлама жасау.</p>
+                <span class="card-link">Сабақты ашу <i class="fas fa-book-open"></i></span>
+            </div>
+            <div class="lesson-card" onclick="openFullLesson(2)">
+                <div class="lesson-card-icon"><i class="fas fa-network-wired"></i></div>
+                <h3>Компьютерлік желілер</h3>
+                <p>Желі түрлері, Интернет, IP-адрес, браузерлер және қауіпсіздік.</p>
+                <span class="card-link">Сабақты ашу <i class="fas fa-book-open"></i></span>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- FULL LESSON MODAL -->
+<div class="modal-overlay" id="fullLessonModal">
+    <div class="modal-content full-lesson-modal">
+        <button class="modal-close" onclick="closeFullLessonModal()">&times;</button>
+        <div id="fullLessonContent"></div>
+    </div>
+</div>
+
+<!-- БЕЙНЕСАБАҚ -->
+<section class="section section-alt" id="videos">
+    <div class="container">
+        <h2 class="section-title">🎬 Бейнесабақтар</h2>
+        <p class="section-desc">Әр тақырып бойынша қазақша бейнесабақтар</p>
+        <div class="cards-grid">
+            <div class="video-card">
+                <h3><i class="fas fa-play-circle"></i> Алгоритмдер және блок-схемалар</h3>
+                <div class="video-wrapper">
+                    <iframe src="https://www.youtube.com/embed/SExR9JHxKHQ" title="Алгоритмдер" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                </div>
+            </div>
+            <div class="video-card">
+                <h3><i class="fas fa-play-circle"></i> Scratch бағдарламалау</h3>
+                <div class="video-wrapper">
+                    <iframe src="https://www.youtube.com/embed/R1RH-KdXcls" title="Scratch" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                </div>
+            </div>
+            <div class="video-card">
+                <h3><i class="fas fa-play-circle"></i> Компьютерлік желілер</h3>
+                <div class="video-wrapper">
+                    <iframe src="https://www.youtube.com/embed/O1-z6oU3mlA" title="Желілер" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ТЕСТ -->
+<section class="section" id="tests">
+    <div class="container">
+        <h2 class="section-title">📝 Тест</h2>
+        <p class="section-desc">Әр тақырып бойынша 10 сұрақтан тест тапсырыңыз</p>
+        <div class="test-topic-selector">
+            <button class="btn btn-outline active" onclick="loadTest(0, this)">Алгоритмдер</button>
+            <button class="btn btn-outline" onclick="loadTest(1, this)">Scratch</button>
+            <button class="btn btn-outline" onclick="loadTest(2, this)">Желілер</button>
+        </div>
+        <div id="testContainer" class="test-container"></div>
+        <div id="testResult" class="test-result" style="display:none;"></div>
+        <div class="rating-section">
+            <h3><i class="fas fa-trophy"></i> Оқушылар рейтингі</h3>
+            <div id="ratingTable"></div>
+        </div>
+    </div>
+</section>
+
+<!-- ДЕҢГЕЙЛІК ТАПСЫРМА -->
+<section class="section section-alt" id="levels">
+    <div class="container">
+        <h2 class="section-title">🎮 Деңгейлік тапсырма</h2>
+        <p class="section-desc">Ойын түрінде тапсырмалар орындаңыз</p>
+        <div class="test-topic-selector">
+            <button class="btn btn-outline active" onclick="loadLevelTopic(0, this)">Алгоритмдер</button>
+            <button class="btn btn-outline" onclick="loadLevelTopic(1, this)">Scratch</button>
+            <button class="btn btn-outline" onclick="loadLevelTopic(2, this)">Желілер</button>
+        </div>
+        <div class="level-buttons">
+            <button class="level-btn level-easy" onclick="startGame('easy')">🟢 Оңай</button>
+            <button class="level-btn level-medium" onclick="startGame('medium')">🟡 Орташа</button>
+            <button class="level-btn level-hard" onclick="startGame('hard')">🔴 Қиын</button>
+        </div>
+        <div id="gameContainer" class="game-container"></div>
+        <div id="gameScore" class="game-score"></div>
+    </div>
+</section>
+
+<!-- ДӘПТЕРМЕН ЖҰМЫС -->
+<section class="section" id="notebook">
+    <div class="container">
+        <h2 class="section-title">📓 Дәптермен жұмыс</h2>
+        <p class="section-desc">Практикалық тапсырмаларды орындап, жүктеп алыңыз</p>
+        <div class="cards-grid">
+            <div class="notebook-card">
+                <div class="notebook-icon"><i class="fas fa-project-diagram"></i></div>
+                <h3>Алгоритмдер — Практика</h3>
+                <div class="notebook-tasks" id="notebookTasks0">
+                    <div class="nb-task">
+                        <span class="nb-num">1</span>
+                        <div>
+                            <p><strong>Тапсырма:</strong> Шай дайындау алгоритмін жазып, блок-схемасын салыңыз.</p>
+                            <p class="nb-deadline"><i class="fas fa-clock"></i> Дедлайн: 2026-03-15, 23:59</p>
+                        </div>
+                    </div>
+                    <div class="nb-task">
+                        <span class="nb-num">2</span>
+                        <div>
+                            <p><strong>Тапсырма:</strong> Тармақталу алгоритмі: «Егер ауа-райы жақсы болса, серуенге шық, болмаса үйде қал» блок-схемасын сал.</p>
+                            <p class="nb-deadline"><i class="fas fa-clock"></i> Дедлайн: 2026-03-15, 23:59</p>
+                        </div>
+                    </div>
+                    <div class="nb-task">
+                        <span class="nb-num">3</span>
+                        <div>
+                            <p><strong>Тапсырма:</strong> Циклдік алгоритм: 1-ден 10-ға дейін санау алгоритмін жаз.</p>
+                            <p class="nb-deadline"><i class="fas fa-clock"></i> Дедлайн: 2026-03-15, 23:59</p>
+                        </div>
+                    </div>
+                </div>
+                <button class="btn btn-primary btn-sm" onclick="downloadNotebook(0)"><i class="fas fa-download"></i> Тапсырманы жүктеу (.docx)</button>
+            </div>
+            <div class="notebook-card">
+                <div class="notebook-icon"><i class="fas fa-puzzle-piece"></i></div>
+                <h3>Scratch — Практика</h3>
+                <div class="notebook-tasks" id="notebookTasks1">
+                    <div class="nb-task">
+                        <span class="nb-num">1</span>
+                        <div>
+                            <p><strong>Тапсырма:</strong> Scratch-та мысықты 100 қадам жүргізіп, «Сәлем!» деп айтқызыңыз.</p>
+                            <p class="nb-deadline"><i class="fas fa-clock"></i> Дедлайн: 2026-03-20, 23:59</p>
+                        </div>
+                    </div>
+                    <div class="nb-task">
+                        <span class="nb-num">2</span>
+                        <div>
+                            <p><strong>Тапсырма:</strong> Scratch-та квадрат сызатын бағдарлама жасаңыз (цикл қолданыңыз).</p>
+                            <p class="nb-deadline"><i class="fas fa-clock"></i> Дедлайн: 2026-03-20, 23:59</p>
+                        </div>
+                    </div>
+                    <div class="nb-task">
+                        <span class="nb-num">3</span>
+                        <div>
+                            <p><strong>Тапсырма:</strong> Scratch-та «Егер жасыл жалаушаны бассаң» оқиғасымен анимация жаса.</p>
+                            <p class="nb-deadline"><i class="fas fa-clock"></i> Дедлайн: 2026-03-20, 23:59</p>
+                        </div>
+                    </div>
+                </div>
+                <button class="btn btn-primary btn-sm" onclick="downloadNotebook(1)"><i class="fas fa-download"></i> Тапсырманы жүктеу (.docx)</button>
+            </div>
+            <div class="notebook-card">
+                <div class="notebook-icon"><i class="fas fa-network-wired"></i></div>
+                <h3>Желілер — Практика</h3>
+                <div class="notebook-tasks" id="notebookTasks2">
+                    <div class="nb-task">
+                        <span class="nb-num">1</span>
+                        <div>
+                            <p><strong>Тапсырма:</strong> Өз компьютеріңнің IP-адресін тауып жаз.</p>
+                            <p class="nb-deadline"><i class="fas fa-clock"></i> Дедлайн: 2026-03-25, 23:59</p>
+                        </div>
+                    </div>
+                    <div class="nb-task">
+                        <span class="nb-num">2</span>
+                        <div>
+                            <p><strong>Тапсырма:</strong> LAN және WAN желілерінің айырмашылығын кесте түрінде жаз.</p>
+                            <p class="nb-deadline"><i class="fas fa-clock"></i> Дедлайн: 2026-03-25, 23:59</p>
+                        </div>
+                    </div>
+                    <div class="nb-task">
+                        <span class="nb-num">3</span>
+                        <div>
+                            <p><strong>Тапсырма:</strong> Интернетте қауіпсіз болу ережелерін 5 тармақпен жаз.</p>
+                            <p class="nb-deadline"><i class="fas fa-clock"></i> Дедлайн: 2026-03-25, 23:59</p>
+                        </div>
+                    </div>
+                </div>
+                <button class="btn btn-primary btn-sm" onclick="downloadNotebook(2)"><i class="fas fa-download"></i> Тапсырманы жүктеу (.docx)</button>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ҚМЖ -->
+<section class="section section-alt" id="kmj">
+    <div class="container">
+        <h2 class="section-title">📋 Қысқа мерзімді жоспар (ҚМЖ)</h2>
+        <p class="section-desc">3 тақырып бойынша ҚМЖ жоспарлары</p>
+        <div class="cards-grid">
+            <!-- KMJ 1 -->
+            <div class="kmj-card">
+                <div class="kmj-header">
+                    <i class="fas fa-file-alt"></i>
+                    <h3>Алгоритмдер және блок-схемалар</h3>
+                </div>
+                <div class="kmj-body">
+                    <div class="kmj-item"><strong>Сабақ мақсаты:</strong> Оқушылар алгоритмнің анықтамасын біледі, блок-схема элементтерін ажыратады, тізбекті алгоритм құра алады.</div>
+                    <div class="kmj-item"><strong>Сабақ кезеңдері:</strong>
+                        <ul>
+                            <li>Ұйымдастыру (3 мин)</li>
+                            <li>Жаңа тақырыпты түсіндіру (15 мин)</li>
+                            <li>Практикалық жұмыс — блок-схема құру (15 мин)</li>
+                            <li>Бекіту — тест (5 мин)</li>
+                            <li>Қорытынды, бағалау (2 мин)</li>
+                        </ul>
+                    </div>
+                    <div class="kmj-item"><strong>Бағалау:</strong> Формативті бағалау — блок-схеманы дұрыс құру, тест нәтижесі.</div>
+                    <div class="kmj-item"><strong>Ресурстар:</strong> Компьютер, проектор, оқулық, жұмыс дәптері, интерактивті тақта.</div>
+                </div>
+                <button class="btn btn-primary btn-sm" onclick="downloadKMJ(0)"><i class="fas fa-file-word"></i> Word форматында жүктеу</button>
+            </div>
+            <!-- KMJ 2 -->
+            <div class="kmj-card">
+                <div class="kmj-header">
+                    <i class="fas fa-file-alt"></i>
+                    <h3>Scratch бағдарламалау негіздері</h3>
+                </div>
+                <div class="kmj-body">
+                    <div class="kmj-item"><strong>Сабақ мақсаты:</strong> Оқушылар Scratch ортасымен танысады, блоктарды қолданып қарапайым бағдарлама жасай алады.</div>
+                    <div class="kmj-item"><strong>Сабақ кезеңдері:</strong>
+                        <ul>
+                            <li>Ұйымдастыру (3 мин)</li>
+                            <li>Scratch ортасын таныстыру (10 мин)</li>
+                            <li>Практика — спрайтты жүргізу (17 мин)</li>
+                            <li>Шығармашылық тапсырма (8 мин)</li>
+                            <li>Қорытынды, бағалау (2 мин)</li>
+                        </ul>
+                    </div>
+                    <div class="kmj-item"><strong>Бағалау:</strong> Формативті — бағдарламаның жұмыс істеуі, шығармашылық тапсырма.</div>
+                    <div class="kmj-item"><strong>Ресурстар:</strong> Компьютер, Scratch онлайн (scratch.mit.edu), проектор, оқулық.</div>
+                </div>
+                <button class="btn btn-primary btn-sm" onclick="downloadKMJ(1)"><i class="fas fa-file-word"></i> Word форматында жүктеу</button>
+            </div>
+            <!-- KMJ 3 -->
+            <div class="kmj-card">
+                <div class="kmj-header">
+                    <i class="fas fa-file-alt"></i>
+                    <h3>Компьютерлік желілер</h3>
+                </div>
+                <div class="kmj-body">
+                    <div class="kmj-item"><strong>Сабақ мақсаты:</strong> Оқушылар желі түрлерін ажыратады, IP-адрес ұғымын біледі, интернет қауіпсіздігін түсінеді.</div>
+                    <div class="kmj-item"><strong>Сабақ кезеңдері:</strong>
+                        <ul>
+                            <li>Ұйымдастыру (3 мин)</li>
+                            <li>Жаңа тақырып — желі түрлері (12 мин)</li>
+                            <li>Топтық жұмыс — желі схемасын құру (13 мин)</li>
+                            <li>Қауіпсіздік ережелерін талқылау (7 мин)</li>
+                            <li>Бекіту, бағалау (5 мин)</li>
+                        </ul>
+                    </div>
+                    <div class="kmj-item"><strong>Бағалау:</strong> Формативті — топтық жұмыс, ауызша жауап.</div>
+                    <div class="kmj-item"><strong>Ресурстар:</strong> Компьютер, проектор, оқулық, интернет, плакаттар.</div>
+                </div>
+                <button class="btn btn-primary btn-sm" onclick="downloadKMJ(2)"><i class="fas fa-file-word"></i> Word форматында жүктеу</button>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- БАЙЛАНЫС -->
+<section class="section" id="contact">
+    <div class="container">
+        <h2 class="section-title">📞 Оқытушымен байланыс</h2>
+        <p class="section-desc">Сұрақтарыңыз болса, бізге хабарласыңыз</p>
+        <div class="contact-grid">
+            <div class="contact-card">
+                <div class="contact-icon whatsapp-icon">
+                    <i class="fab fa-whatsapp"></i>
+                </div>
+                <h3>WhatsApp</h3>
+                <p>Тікелей хабарлама жіберіңіз</p>
+                <a href="https://wa.me/77057004250" target="_blank" class="btn btn-whatsapp">
+                    <i class="fab fa-whatsapp"></i> WhatsApp арқылы жазу
+                </a>
+            </div>
+            <div class="contact-card">
+                <div class="contact-icon location-icon">
+                    <i class="fas fa-map-marker-alt"></i>
+                </div>
+                <h3>Біздің мекенжай</h3>
+                <p>Төле би 86</p>
+                <div class="map-wrapper">
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2906.5!2d76.945!3d43.238!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zNDPCsDE0JzE2LjgiTiA3NsKwNTYnNDIuMCJF!5e0!3m2!1skk!2skz!4v1" width="100%" height="250" style="border:0; border-radius:12px;" allowfullscreen="" loading="lazy"></iframe>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- FOOTER WITH CHATBOT -->
+<footer class="footer" id="footer">
+    <div class="container">
+        <div class="chatbot-section">
+            <h3><i class="fas fa-robot"></i> Информатика чат-боты</h3>
+            <p>Кез келген информатика сұрағыңызды жазыңыз — бот қазақша жауап береді!</p>
+            <div class="chatbot-window" id="chatbotWindow">
+                <div class="chat-messages" id="chatMessages">
+                    <div class="chat-msg bot-msg">
+                        <div class="msg-avatar"><i class="fas fa-robot"></i></div>
+                        <div class="msg-bubble">Сәлеметсіз бе! Мен информатика бойынша көмекші ботпын. Сұрағыңызды жазыңыз! 🤖</div>
+                    </div>
+                </div>
+                <div class="chat-input-area">
+                    <input type="text" id="chatInput" placeholder="Сұрағыңызды жазыңыз..." onkeypress="if(event.key==='Enter')sendChat()">
+                    <button onclick="sendChat()" class="chat-send-btn"><i class="fas fa-paper-plane"></i></button>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 INF6.KZ — 6-сынып Информатика онлайн кітапша. Барлық құқықтар қорғалған.</p>
+        </div>
+    </div>
+</footer>
+
+<!-- CONFETTI CANVAS -->
+<canvas id="confettiCanvas"></canvas>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/docx/8.2.0/docx.min.js"></script>
+<script src="./script.js"></script>
+</body>
+</html>
